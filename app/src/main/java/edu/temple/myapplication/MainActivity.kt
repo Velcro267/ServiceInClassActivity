@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
     //Menu Setup
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
-        startPauseMenueItem = menu.findItem(R.id.action_start)
-        stopMenueItem = menu.findItem(R.id.action_stop)
+        startPauseMenueItem = menu?.findItem(R.id.action_start)
+        stopMenueItem = menu?.findItem(R.id.action_stop)
         updateStartButtonLabel()
         return true
     }
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun handleStopAction{
+    private fun handleStopAction(){
         if (!isBound || timerBinder == null) return
 
         val binder = timerBinder!!
